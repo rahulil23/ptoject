@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Livewire;
+
+use Livewire\Component;
+
+class VisitorForm extends Component
+{
+    public $currentPage = 1;
+
+    public $pages = [
+        1 => [
+            'heading' => 'Personal Information',
+            'subheading' => 'sub-1'
+        ],
+        2 => [
+            'heading' => 'Instansi',
+            'subheading' => 'sub-2'
+        ],
+    ];
+
+    public function goToNextPage()
+    {
+        $this->currentPage++;
+    }
+
+    public function goToPreviousPage()
+    {
+        $this->currentPage--;
+    }
+
+    public function render()
+    {
+        return view('livewire.visitor-form');
+    }
+}
